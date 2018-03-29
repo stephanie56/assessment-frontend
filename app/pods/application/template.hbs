@@ -1,14 +1,15 @@
 {{#if isIndexRoute}}
   <header class="header">
-    <ul class="header header--nav">
+    <nav class="header header--nav">
+      <li><a href="#" {{action 'toggleMenu'}}>&#9776;</a></li>
       <li><a href="#" {{action 'toggleMenu'}}>Home</a></li>
-      <li><a href="#">Product</a></li>
-    </ul>
+      <li {{action 'toggleMenu'}} >{{link-to 'Products' 'products'}}</li>
+    </nav>
     <a><img src='assets/quandl-logo.svg'></a>
     <ul class="header header--nav">
-      <li><a href="#">Docs</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Sign In</a></li>
+      <li {{action 'toggleMenu'}} >{{link-to 'Docs' 'products'}}</li>
+      <li {{action 'toggleMenu'}} >{{link-to 'Blogs' 'products'}}</li>
+      <li {{action 'toggleMenu'}} >{{link-to 'Sign In' 'products'}}</li>
     </ul>
   </header>
 {{else}}
