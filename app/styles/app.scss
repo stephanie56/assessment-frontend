@@ -1,32 +1,30 @@
 // Style files in the pods folder are automatically loaded in.
 @import 'pod-styles';
-@import "./base";
+@import "./base/base";
+@import "./layout/header";
+
+img {
+  max-width: 100%;
+}
 
 body {
   margin: 0;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: $title-font-family;
-  background-color: $dark-blue;
-  color: $main-white;
+.container {
+  max-width: 1200px;
+}
 
-  &--nav {
-    list-style: none;
-    padding-left: 0;
-    text-transform: uppercase;
-    a {
-      display: inline-block;
-      padding: 0 0.6rem;
-      font-weight: 400;
-      font-size: 0.8rem;
-      color: $main-white;
-      text-decoration: none;
-    }
+.icon {
+  width: 2rem;
+  height: 2rem;
+  background-size: cover;
+
+  &--avatar {
+    background-image: url('../assets/avatar.png');
   }
-
-
 }

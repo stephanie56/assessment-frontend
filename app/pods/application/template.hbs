@@ -1,24 +1,32 @@
 {{#if isIndexRoute}}
   <header class="header">
-    <ul class="header header--nav">
+    <nav class="header header--nav">
+      <li><a href="#" {{action 'toggleMenu'}}>&#9776;</a></li>
       <li><a href="#" {{action 'toggleMenu'}}>Home</a></li>
-      <li><a href="#">Product</a></li>
-    </ul>
+      <li {{action 'toggleMenu'}} >{{link-to 'Products' 'products'}}</li>
+    </nav>
     <a><img src='assets/quandl-logo.svg'></a>
     <ul class="header header--nav">
-      <li><a href="#">Docs</a></li>
-      <li><a href="#">Blog</a></li>
-      <li><a href="#">Sign In</a></li>
-    </ul>
-  </header>
-{{else}}
-  <header class="header">
-    <ul class="header header--nav">
-      <li>{{link-to 'Data Publisher' 'products'}}</li>
+      <li {{action 'toggleMenu'}} >{{link-to 'Docs' 'products'}}</li>
+      <li {{action 'toggleMenu'}} >{{link-to 'Blogs' 'products'}}</li>
+      <li {{action 'toggleMenu'}} >{{link-to 'Sign In' 'products'}}</li>
     </ul>
   </header>
 {{/if}}
 
-<div>
+{{#if isShowRoute}}
+  <header class="header header__alignleft header__blue">
+    <i class="fas fa-angle-left"></i>
+    <i class="icon icon--avatar"></i>
+    {{link-to 'Data Publisher' 'products'}}
+  </header>
+  {{else}}
+  <header class="header header__alignleft header__blue">
+    <i class="icon icon--avatar"></i>
+    <h2>Data Publisher</h2>
+  </header>
+{{/if}}
+
+<div class="container">
   {{outlet}}
 </div>
